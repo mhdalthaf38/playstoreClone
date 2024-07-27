@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:play_store_app/core/AppsPage/AppsmainPage.dart';
-import 'package:play_store_app/core/Foryou.dart';
-import 'package:play_store_app/core/OffersPage.dart';
-import 'package:play_store_app/core/Playstore.dart';
+import 'package:play_store_app/core/games/Foryou.dart';
+import 'package:play_store_app/core/offer/OffersPage.dart';
+import 'package:play_store_app/core/games/Playstore.dart';
 import 'package:play_store_app/core/books/Booksmainpage.dart';
-import 'package:play_store_app/core/categories.dart';
-import 'package:play_store_app/core/kids.dart';
+import 'package:play_store_app/core/games/categories.dart';
+import 'package:play_store_app/core/games/kids.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,6 +50,5 @@ class _HomePageState extends State<HomePage> {
                 label: 'Books'),
           ]),
     );
-    ;
   }
 }

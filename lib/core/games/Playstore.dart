@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:play_store_app/core/Foryou.dart';
-import 'package:play_store_app/core/TopCharts.dart';
-import 'package:play_store_app/core/categories.dart';
-import 'package:play_store_app/core/kids.dart';
-import 'package:play_store_app/core/premium.dart';
+import 'package:play_store_app/core/games/Foryou.dart';
+import 'package:play_store_app/core/games/TopCharts.dart';
+import 'package:play_store_app/core/games/categories.dart';
+import 'package:play_store_app/core/games/kids.dart';
+import 'package:play_store_app/core/games/premium.dart';
 
 class PlaystorePage extends StatefulWidget {
   const PlaystorePage({super.key});
