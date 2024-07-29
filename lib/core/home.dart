@@ -15,37 +15,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final pages = [
-    PlaystorePage(),
-    Appsmainpage(),
-    Offerspage(),
-    Booksmainpage()
-  ];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          onTap: (newindex) {
+      body: [
+        PlaystorePage(),
+        Appsmainpage(),
+        Offerspage(),
+        Booksmainpage()
+      ][_currentIndex],
+      bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (newindex) {
             setState(() {
               _currentIndex = newindex;
             });
           },
-          currentIndex: _currentIndex,
-          unselectedItemColor: Color.fromARGB(255, 0, 0, 0),
-          selectedItemColor: Color.fromARGB(255, 0, 0, 0),
-          items: [
-            BottomNavigationBarItem(
+          selectedIndex: _currentIndex,
+          destinations: [
+            NavigationDestination(
                 icon: ImageIcon(AssetImage('assets/images/joystick.png')),
                 label: 'Games'),
-            BottomNavigationBarItem(
+            NavigationDestination(
                 icon: ImageIcon(AssetImage('assets/images/apps.png')),
                 label: 'Apps'),
-            BottomNavigationBarItem(
+            NavigationDestination(
                 icon: ImageIcon(AssetImage('assets/images/offers.png')),
                 label: 'Offers'),
-            BottomNavigationBarItem(
+            NavigationDestination(
                 icon: ImageIcon(AssetImage('assets/images/books.png')),
                 label: 'Books'),
           ]),

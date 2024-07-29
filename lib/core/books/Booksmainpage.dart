@@ -73,8 +73,8 @@ class _BooksmainpageState extends State<Booksmainpage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 15),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20, left: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -95,65 +95,38 @@ class _BooksmainpageState extends State<Booksmainpage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
-                    icon: Icon(Icons.more_vert),
+                    icon: const Icon(Icons.more_vert),
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Container(child: Text("more content"))));
+                          content:
+                              Container(child: const Text("more content"))));
                     },
                   ),
                 )
               ],
             ),
-            SingleChildScrollView(
+            Container(
+              height: 230,
               child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  itemCount: 1,
+                  itemCount: img.length,
                   itemBuilder: (context, index) {
-                    return SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          CustomEbookCard(
-                            applogo: img[7],
-                            appname: gameName[7],
-                            ruppee: 303,
-                            appRating: '4.4',
-                          ),
-                          CustomEbookCard(
-                            applogo: img[6],
-                            appname: gameName[6],
-                            ruppee: 303,
-                            appRating: '4.4',
-                          ),
-                          CustomEbookCard(
-                            applogo: img[5],
-                            appname: gameName[5],
-                            ruppee: 303,
-                            appRating: '4.4',
-                          ),
-                          CustomEbookCard(
-                            applogo: img[4],
-                            appname: gameName[4],
-                            ruppee: 303,
-                            appRating: '4.4',
-                          ),
-                          CustomEbookCard(
-                            applogo: img[3],
-                            appname: gameName[3],
-                            ruppee: 303,
-                            appRating: '4.4',
-                          ),
-                        ],
-                      ),
+                    return Container(
+                      child: CustomEbookCard(
+                          applogo: img[index],
+                          appname: gameName[index],
+                          ruppee: 202,
+                          appRating: '4.4'),
                     );
                   }),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 15),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20, left: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -174,61 +147,30 @@ class _BooksmainpageState extends State<Booksmainpage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
-                    icon: Icon(Icons.more_vert),
+                    icon: const Icon(Icons.more_vert),
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Container(child: Text("more content"))));
+                          content:
+                              Container(child: const Text("more content"))));
                     },
                   ),
                 )
               ],
             ),
-            SizedBox(
-              child: SingleChildScrollView(
-                child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 1,
-                    itemBuilder: (context, index) {
-                      return SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            CustomEbookCard(
-                              applogo: img[0],
-                              appname: gameName[0],
-                              ruppee: 303,
-                              appRating: '4.4',
-                            ),
-                            CustomEbookCard(
-                              applogo: img[1],
-                              appname: gameName[1],
-                              ruppee: 303,
-                              appRating: '4.4',
-                            ),
-                            CustomEbookCard(
-                              applogo: img[2],
-                              appname: gameName[2],
-                              ruppee: 303,
-                              appRating: '4.4',
-                            ),
-                            CustomEbookCard(
-                              applogo: img[3],
-                              appname: gameName[index + 3],
-                              ruppee: 303,
-                              appRating: '4.4',
-                            ),
-                            CustomEbookCard(
-                              applogo: img[4],
-                              appname: gameName[4],
-                              ruppee: 303,
-                              appRating: '4.4',
-                            ),
-                          ],
-                        ),
-                      );
-                    }),
-              ),
+            Container(
+              height: 230,
+              child: ListView.builder(
+                  itemCount: img.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      child: CustomEbookCard(
+                          applogo: img[index],
+                          appname: gameName[index],
+                          ruppee: 343,
+                          appRating: '4.1'),
+                    );
+                  }),
             ),
           ],
         ),

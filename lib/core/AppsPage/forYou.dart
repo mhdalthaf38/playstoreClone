@@ -87,8 +87,8 @@ class _AppForyouState extends State<AppForyou> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
+              const Padding(
+                padding: EdgeInsets.only(left: 20),
                 child: Text(
                   "Suggested For You",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
@@ -97,10 +97,10 @@ class _AppForyouState extends State<AppForyou> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: IconButton(
-                  icon: Icon(Icons.more_vert),
+                  icon: const Icon(Icons.more_vert),
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Container(child: Text("more content"))));
+                        content: Container(child: const Text("more content"))));
                   },
                 ),
               )
@@ -158,47 +158,45 @@ class _AppForyouState extends State<AppForyou> {
               ],
             ),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "based on your recent activity",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Icon(Icons.arrow_outward),
               )
             ],
           ),
           SizedBox(
             child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: img.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(
                       gameName[index],
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
-                          fontSize: 16),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 16),
                     ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           gamecompany[index],
-                          style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 0, 0)),
+                          style: const TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0)),
                         ),
-                        Text(
+                        const Text(
                           '4.3  Rated for 3+',
-                          style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 0, 0)),
+                          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                         )
                       ],
                     ),
